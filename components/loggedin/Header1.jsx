@@ -4,9 +4,9 @@ import { FiShoppingCart } from "react-icons/fi";
 
 
 
-const Header = () => {
+const Header1 = () => {
     return ( 
-        <div className=' antialiased flex space-x-5 h-16 w-full  justify-around pt-4 bg-gray-200'>
+        <div className=' antialiased flex space-x-5 h-16 w-full  justify-around pt-4 '>
            
            <a href="./"> <div className=" flex justify-between pb-5 font-bold gap-x-2 ">
         <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-8">
@@ -19,7 +19,7 @@ const Header = () => {
         </div></a>
         
         <div class="">
-        <input class="h-7 rounded-xl text-sm w-96 pl-6 hover:bg-gray-300 focus:outline-none focus:ring-0 active:bg-white" placeholder="search anything" />
+        <input class="h-7 rounded-xl text-sm w-96 pl-6  focus:outline-none focus:ring-0 active:bg-white focus:border-sky-300 focus:border" placeholder="search anything" />
 
       </div>
 
@@ -60,4 +60,4 @@ const Header = () => {
      );
 }
  
-export default Header;
+export default Header1;

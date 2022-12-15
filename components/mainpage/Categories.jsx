@@ -1,74 +1,108 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=8c66b0ec1e8dc59359cce06588eab2bc'
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+
+
+// import required modules
+import { Pagination } from "swiper";
 
  
 export default function Home() {
-
-  const [data, setData] = useState('');
-
-  const fetchData = () => {
-
-    fetch( url ) 
-    .then(res => res.json()) 
-    .then(data => {
-      console.log(data);
-      setData(data);
-    })
-    .catch(err => console.error(err));
-  
-   };
-
-
-useEffect(() => {
- 
-fetchData();
- 
-}, [])
-
 
 
   return ( 
 <>
 
-<div className='space-y-8 p-24 bg-gray-200 min-h-screen antialiased'>
+ <div className='space-y-8 px-5  antialiased'>
 
-<div className='flex justify-between font-semibold  text-gray-700 '>
-<div className=' text-xl'>Recommended</div>
-<div className='text-gray-500 '>View More</div>
+  <div className='flex justify-between font-semibold text-blue-700 '>
+<div className=' text-3xl'>Categories</div>
 </div>
 
-<div className='space-x-10 flex text-gray-200 '>
 
-  <div className='h-52 w-60 rounded-3xl shadow-slate-400 shadow-lg bg-green-500 bg-cover ' style={{ backgroundImage: ` url('https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg')` }}>
-    <div className='mt-32 mx-4'>
-    <div className='font-semibold tracking-wider'>{data.results[0].name}</div>
-    <div className='font-light text-sm'>{data.results[0].first_air_date}</div>
+<Swiper
+        slidesPerView={1}
+        centeredSlides={true}
+        spaceBetween={5}
+        grabCursor={true}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide className="flex space-x-2">
+          <div className='h-60 w-1/3  rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
     </div>
   </div>
 
-  <div className='h-52 w-60 rounded-3xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg')` }}>
-    <div className='mt-32 mx-4'>
-    <div className='font-semibold tracking-wider'>{data.results[1].name}</div>
-    <div className='font-light text-sm'>{data.results[1].first_air_date}</div>
+  <div className='h-60 w-1/3  rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
     </div>
-  </div>
-  <div className='h-52 w-60 rounded-3xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg')` }}>
-    <div className='mt-32 mx-4'>
-    <div className='font-semibold tracking-wider'>{data.results[2].name}</div>
-    <div className='font-light text-sm'>{data.results[2].first_air_date}</div>
+    </div>
+
+    <div className='h-60 w-1/3 rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=879&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
     </div>
   </div>
 
- <div className='h-52 w-60 rounded-3xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg')` }}>
-    <div className='mt-32 mx-4'>
-    <div className='font-semibold tracking-wider'>{data.results[3].name}</div>
-    <div className='font-light text-sm'>{data.results[3].first_air_date}</div>
+  </SwiperSlide>
+
+        <SwiperSlide className="flex space-x-2" >  
+          
+          <div className='h-60 w-1/3  rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
     </div>
   </div>
 
+  <div className='h-60 w-1/3  rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
+    </div>
   </div>
+
+  <div className='h-60 w-1/3  rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1612887726773-e64e20cf08fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
+    </div>
+  </div>
+  
+  </SwiperSlide>
+
+        <SwiperSlide>
+          <div className='h-60 w-1/3 rounded-2xl bg-green-500 bg-cover shadow-slate-400 shadow-lg' style={{ backgroundImage: ` url('https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=879&q=80')` }}>
+    <div className=''>
+    <div className='font-semibold tracking-wider'>{}</div>
+    <div className='font-light text-sm'>{}</div>
+    </div>
+  </div>
+  </SwiperSlide>
+
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
+
 </div>
 
 </>
